@@ -3,15 +3,22 @@ from pandas_datareader import data
 from bokeh.plotting import figure, show, output_file
 from bokeh.resources import CDN
 from bokeh.embed import components
-import datetime
+from datetime import datetime
 
 app = Flask(__name__)
 
 
 @app.route('/plot/')
 def plot():
-    start = datetime.date(2020, 2, 1)
-    end = datetime.date(2020, 10, 25)
+    start = datetime(2020, 2, 1)
+    date = datetime.now().strftime("%Y,%m,%d")
+    date = date.split(",")
+
+    year = int(date[0])
+    month = int(date[1])
+    day = int(date[2])
+
+    end = datetime(year, month, day)
 
     # print(start)
     # end = datetime.time(2020,10,25)
@@ -36,7 +43,7 @@ def plot():
 
     f = figure(x_axis_type="datetime", width=1000, height=700, sizing_mode="scale_width")
 
-    f.title.text = "Candlestick Graph"
+    f.title.text = "Candlestick Graph for Tesla"
 
     f.grid.grid_line_alpha = 0.3
 
