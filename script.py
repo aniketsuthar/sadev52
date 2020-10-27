@@ -10,13 +10,14 @@ app = Flask(__name__)
 
 @app.route('/plot/')
 def plot():
-    start = datetime(2020, 2, 1)
     date = datetime.now().strftime("%Y,%m,%d")
     date = date.split(",")
 
     year = int(date[0])
     month = int(date[1])
     day = int(date[2])
+
+    start = datetime(2020, month - 3, 1)
 
     end = datetime(year, month, day)
 
