@@ -6,10 +6,14 @@
     <body>
     <h3> Please enter code in text field</h3>
     <form method="post" enctype="multipart/form-data" action="/plot">
-        <input type="text"  name="code"/>
+        <input type="text" name="code"/>
         <input type="submit" value="Submit"/>
     </form>
+
     </body>
+</div>
+<div class="error">
+    {{error | safe}}
 </div>
 {{script1 | safe}}
 {{ div1 | safe}}
