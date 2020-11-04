@@ -57,7 +57,7 @@ def draw_plot():
 
             f.title.text = "Candlestick Graph for " + code.upper()
 
-            f.grid.grid_line_alpha = 0.3
+            f.grid.grid_line_alpha = 0.5
 
             f.segment(df.index, df.High, df.index, df.Low, line_color="black", line_width=1)
 
