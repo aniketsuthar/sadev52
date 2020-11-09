@@ -51,8 +51,11 @@ def draw_plot():
             df["Height"] = abs(df.Open - df.Close)
 
             f = figure(x_axis_type="datetime", width=1000, height=700, sizing_mode="scale_width")
-            f.xaxis.axis_label = 'Date'
-            f.yaxis.axis_label = 'Price in $'
+            f.xaxis.axis_label = 'Date'.upper()
+            f.yaxis.axis_label = 'Price in $'.upper()
+
+            f.xaxis.axis_label_text_font_size = "15pt"
+            f.yaxis.axis_label_text_font_size = "15pt"
             f.title.text = "Candlestick Graph for " + code.upper()
 
             f.grid.grid_line_alpha = 0.5
